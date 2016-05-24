@@ -1,6 +1,6 @@
 
 class Bike
   def working?
-    true
+    return true
   end
 end
