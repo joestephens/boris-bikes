@@ -13,8 +13,16 @@ describe DockingStation do
     expect(subject.respond_to?(:release_bike)).to eq true
   end
 
-  it 'receives a working bike' do
+  it 'releases a working bike' do
     expect(bike).to be_working
     expect(subject.release_bike.class).to eq Bike
+  end
+
+  it 'should dock bike' do
+    expect(subject.dock(bike)).to eq bike
+  end
+
+  it 'shows bikes' do
+    expect(subject.bikes.class).to eq Fixnum
   end
 end
