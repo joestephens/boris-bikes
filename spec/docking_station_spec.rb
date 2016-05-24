@@ -3,19 +3,15 @@ require 'bike'
 
 
 describe DockingStation do
-
-  bike = Bike.new
-  it 'needs to be working' do
-    expect(bike.respond_to?(:working?)).to eq true
+  it 'responds to release bike' do
+    expect(subject.respond_to?(:release_bike)).to eq true
   end
 
   it 'shows bikes' do
     expect(subject.bikes.class).to eq Fixnum
   end
 
-  it 'responds to release bike' do
-    expect(subject.respond_to?(:release_bike)).to eq true
-  end
+  bike = Bike.new
 
   it 'releases a working bike' do
     subject.dock(1)
