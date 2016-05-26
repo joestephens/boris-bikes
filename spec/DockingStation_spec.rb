@@ -3,7 +3,7 @@
 require 'DockingStation'
 
 describe DockingStation do
-	
+
 	let(:bike) {Bike.new}
 
 	describe "initialization" do
@@ -31,6 +31,13 @@ describe DockingStation do
 		it "releases a bike" do
 			subject.dock(bike)
 			expect(subject.release_bike).to be_working
+		end
+
+		it "does not release a broken bike" do
+			bike.bike_working = false
+			subject.dock(bike)
+			#expect(subject.release_bike).not_to be_working
+			expect { subject.release_bike }.to raise_error("The bike is broken")
 		end
 
 		it "raises an error when there are no bikes" do
