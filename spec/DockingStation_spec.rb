@@ -8,10 +8,6 @@ describe DockingStation do
 	end
 
 	describe "#release_bike" do
-		#it "releases the working bike" do
-			#bike = subject.release_bike
-			#expect(bike).to be_working
-		#end
 
 		it "releases a bike" do
 			bike = Bike.new
@@ -43,8 +39,8 @@ describe DockingStation do
 
 	it "returns a docked bike" do
 		bike = Bike.new
-		subject.dock(bike)
-		expect(subject.bikes.last).to eq bike
+		expect(subject.dock(bike)).to eq bike
+
 	end
 
 	it "responds to bike method" do
