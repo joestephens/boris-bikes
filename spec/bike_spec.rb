@@ -10,7 +10,7 @@ describe Bike do
 	it { expect(subject).to respond_to :report_broken }
 
 	it "is reported broken by user" do
-		subject.bike_working = false
+		subject.report_broken
 		expect(subject.working?).to eq false
 	end
 end
